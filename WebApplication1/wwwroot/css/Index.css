@@ -1,0 +1,59 @@
+﻿@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .main {
+        width: 80%;
+        padding: 0;
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+        width: 100%;
+    }
+
+    .Logo {
+        position: center;
+        // margin-bottom: 250px;
+    }
+}
+
+@media only screen and (min-width:500px) {
+    .Logo {
+        position: center;
+        // margin-bottom: 250px;
+    }
+}
+
+body {
+    background-color: #ffffff;
+    font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+}
+
+.Logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.main-text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+    .main-text p {
+        color: #000000;
+        font-size: 30px;
+        text-align: center;
+    }
+
+hr {
+    border: 1px solid #ffff00;
+}

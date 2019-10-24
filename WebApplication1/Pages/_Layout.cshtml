@@ -1,0 +1,35 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Layout.css" />
+    <script type="text/javascript" src="~/JavaScript/Layout.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a asp-page="Index">Home</a>
+            </li>
+            <li>
+                <a asp-page="Menus">Menus</a>
+            </li>
+            <li>
+                <a asp-page="Order">Order</a>
+            </li>
+            <li>
+                <a asp-page="About">About Us</a>
+            </li>
+            <li>
+                <a asp-page="Contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

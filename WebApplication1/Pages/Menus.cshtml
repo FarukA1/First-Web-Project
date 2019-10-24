@@ -1,0 +1,16 @@
+﻿@page
+@model WebApplication1.Pages.MenusModel
+@{
+    <link rel="stylesheet" type="text/css" href="~/css/Menus.css" />
+    ViewData["Title"] = "Menus";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<img class="Logo2" src="~/Img/Latest.JPG" alt="Logo" />
+<h1>My Dynamic Page</h1>
+
+    <button type="submit" asp-page-handler="Even">Even</button>
+<p>Contact Us Now</p>
+
+

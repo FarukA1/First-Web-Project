@@ -1,0 +1,75 @@
+﻿@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .main {
+        width: 80%;
+        padding: 0;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .svg {
+        display: none;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+        width: 100%;
+    }
+}
+
+
+body {
+    background-color: #ffffff;
+    font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+}
+
+nav ul {
+    background-color: #ffffff;
+    overflow: hidden;
+    color: #000000;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    -webkit-transition: max-height 0.4s;
+    -moz-transition: max-height 0.4s;
+    -o-transition: max-height 0.4s;
+    transition: max-height 0.4s;
+}
+
+    nav ul li {
+        display: inline-block;
+        padding: 20px;
+    }
+
+        nav ul li a {
+            font-style: inherit;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: inherit;
+            padding: 20px;
+            margin: 0;
+            letter-spacing: 0.15em;
+            position: relative;
+        }
+
+            nav ul li a:after {
+                background: none repeat scroll 0 0 transparent;
+                bottom: 0;
+                content: "";
+                display: block;
+                height: 2px;
+                left: 50%;
+                position: absolute;
+                background: #ffff00;
+                transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                width: 0;
+            }
+
+            nav ul li a:hover:after {
+                width: 100%;
+                left: 0;
+            }
