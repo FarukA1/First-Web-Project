@@ -9,30 +9,32 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>
-                <a asp-page="Index">Home</a>
-            </li>
-            <li>
-                <a asp-page="Menus">Menus</a>
-            </li>
-            <li>
-                <a asp-page="Order">Order</a>
-            </li>
-            <li>
-                <a asp-page="About">About Us</a>
-            </li>
-            <li>
-                <a asp-page="Contact">Contact</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="menu-icon">
-        <div class="one"></div>
-        <div class="two"></div>
-        <div class="three"></div>
-    </div>
+    <section>
+        <header>    
+            <nav>
+                <ul class="active">
+                    <li>
+                        <a asp-page="Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-page="Menus">Menus</a>
+                    </li>
+                    <li>
+                        <a asp-page="Order">Order</a>
+                    </li>
+                    <li>
+                        <a asp-page="About">About Us</a>
+                    </li>
+                    <li>
+                        <a asp-page="Contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+    </section>
+    
+    
     <div>
         @RenderBody()
     </div>
