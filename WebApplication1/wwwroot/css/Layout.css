@@ -1,31 +1,10 @@
-﻿@media only screen and (max-width:800px) {
-    .main {
-        width: 80%;
-        padding: 0;
-    }
-
-    .right {
-        width: 100%;
-    }
-    .active li a{
-        display: none;
-    }
-   
-}
-
-@media only screen and (max-width:500px) {
+﻿
+@media only screen and (max-width:900px) {
     .menu, .main, .right {
         width: 100%;
     }
-    body{
-        overflow-x: hidden;
-    }
-    .active li a{ display: none;
-
-    }
-    
+  
 }
-
 
 body {
     background-color: #ffffff;
@@ -33,7 +12,8 @@ body {
 }
 
 
-nav ul {
+
+.topnav .active {
     background-color: #ffffff;
     overflow: hidden;
     color: #000000;
@@ -46,36 +26,56 @@ nav ul {
     transition: max-height 0.4s;
 }
 
-    nav ul li {
-        display: inline-block;
+.topnav .active li {
+    display: inline-block;
+    padding: 20px;
+}
+
+.topnav .active li a {
+    font-style: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    padding: 20px;
+    margin: 0;
+    letter-spacing: 0.15em;
+    position: relative;
+}
+
+.topnav .active li a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #ffff00;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.topnav .active li a:hover:after {
+    width: 100%;
+    left: 0;
+}
+.buttomnav {
+    background-color: #E8E8E8;
+    overflow: hidden;
+    position: inherit;
+    bottom: 0;
+    width: 100%;
+}
+.buttomnav ul li{
+    list-style-type: none;
+}
+    .buttomnav ul li a {
+        font-style: inherit;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: inherit;
         padding: 20px;
+        margin: 0;
+        letter-spacing: 0.15em;
+        position: relative;
     }
-
-        nav ul li a {
-            font-style: inherit;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: inherit;
-            padding: 20px;
-            margin: 0;
-            letter-spacing: 0.15em;
-            position: relative;
-        }
-
-            nav ul li a:after {
-                background: none repeat scroll 0 0 transparent;
-                bottom: 0;
-                content: "";
-                display: block;
-                height: 2px;
-                left: 50%;
-                position: absolute;
-                background: #ffff00;
-                transition: width 0.3s ease 0s, left 0.3s ease 0s;
-                width: 0;
-            }
-
-            nav ul li a:hover:after {
-                width: 100%;
-                left: 0;
-            }

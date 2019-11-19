@@ -1,7 +1,12 @@
-﻿body {
+﻿@media only screen and (max-width:600px) {
+    .menu, .main, .right {
+        width: 100%;
+    }
+}
+body {
     background-color: #FFFFFF;
 }
-
+                                                                 
 p {
     color: #ffffff;
 }

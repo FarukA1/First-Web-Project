@@ -9,9 +9,8 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <section>
-        <header>    
-            <nav>
+        <header>   
+            <nav class="topnav">
                 <ul class="active">
                     <li>
                         <a asp-page="Index">Home</a>
@@ -31,12 +30,30 @@
                 </ul>
             </nav>
         </header>
-        
-    </section>
-    
-    
     <div>
         @RenderBody()
     </div>
+    <footer>
+        <nav class="buttomnav">
+            <ul>
+                <li>
+                    <a asp-page="Index">Home</a>
+                </li>
+                <li>
+                    <a asp-page="Menus">Menus</a>
+                </li>
+                <li>
+                    <a asp-page="Order">Order</a>
+                </li>
+                <li>
+                    <a asp-page="About">About Us</a>
+                </li>
+                <li>
+                    <a asp-page="Contact">Contact</a>
+                </li>
+            </ul>
+            
+        </nav>
+    </footer>
 </body>
 </html>

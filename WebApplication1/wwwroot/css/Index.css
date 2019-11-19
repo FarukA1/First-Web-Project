@@ -1,37 +1,48 @@
-﻿@media only screen and (max-width:800px) {
-    /* For tablets: */
-    .main {
-        width: 80%;
-        padding: 0;
-    }
-
-    .right {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width:500px) {
-    /* For mobile phones: */
+﻿@media only screen and (max-width:600px) {
     .menu, .main, .right {
         width: 100%;
     }
+}
 
+@media only screen and (min-width:600px) {
     .Logo {
         position: center;
-        // margin-bottom: 250px;
+    }
+
+    .demo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.6;
+        width: 100%;
+        height: 70px;
+    }
+}
+@media only screen and (min-width: 33.75em) {
+    .gallery__item {
+        flex-basis: calc(50% - 2rem);
     }
 }
 
-@media only screen and (min-width:500px) {
-    .Logo {
-        position: center;
-        // margin-bottom: 250px;
+@media only screen and (min-width: 48em) {
+    .gallery__item {
+        flex-basis: calc((100% / 3) - 2rem);
     }
 }
+
+@media only screen and (min-width: 60em) {
+    .gallery__item {
+        flex-basis: calc((100% / 4) - 2rem);
+    }
+}
+
 
 body {
     background-color: #ffffff;
     font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+    width: 94%;
+    margin: auto;
+   
 }
 
 .Logo {
@@ -57,3 +68,31 @@ body {
 hr {
     border: 1px solid #ffff00;
 }
+
+
+.gallery {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.gallery__item {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 1px 2px 40px 2px rgba(160, 160, 160, .5);
+}
+
+.gallery__image-caption {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    text-align:center;
+    font-size: 20px;
+}
+
+.gallery__image {
+    width: 100%;
+    display: block;
+}
+
