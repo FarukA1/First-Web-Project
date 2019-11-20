@@ -9,33 +9,9 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-        <header>   
-            <nav class="topnav">
-                <ul class="active">
-                    <li>
-                        <a asp-page="Index">Home</a>
-                    </li>
-                    <li>
-                        <a asp-page="Menus">Menus</a>
-                    </li>
-                    <li>
-                        <a asp-page="Order">Order</a>
-                    </li>
-                    <li>
-                        <a asp-page="About">About Us</a>
-                    </li>
-                    <li>
-                        <a asp-page="Contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    <div>
-        @RenderBody()
-    </div>
-    <footer>
-        <nav class="buttomnav">
-            <ul>
+    <header>
+        <nav class="topnav">
+            <ul class="active">
                 <li>
                     <a asp-page="Index">Home</a>
                 </li>
@@ -52,8 +28,50 @@
                     <a asp-page="Contact">Contact</a>
                 </li>
             </ul>
-            
         </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container-1">
+            <a class="logo-name">
+                Genesis
+            </a>
+            <nav class="footernav">
+                <ul class="active-2">
+                    <li>
+                        <a asp-page="Index">Home</a>
+                    </li>
+                   
+                    <li>
+                        <a asp-page="Menus">Menus</a>
+                    </li>
+                    <li>
+                        <a asp-page="Order">Order</a>
+                    </li>
+                    <li>
+                        <a asp-page="About">About Us</a>
+                    </li>
+                    <li>
+                        <a asp-page="Contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container-2">
+            <a class="logo-name">
+                Have a Questions?
+            </a>
+            <div class="active-3">
+                <ul>
+                    <li><a>Address: 145-147 High Street, Liverpool, United Kingdom</a></li>
+                    <li><a>Phone: +1510 5787778</a></li>
+                    <li><a>Email: enquiries@genesis.co.uk</a></li>
+                </ul>
+            </div>
+        </div> 
     </footer>
 </body>
 </html>
