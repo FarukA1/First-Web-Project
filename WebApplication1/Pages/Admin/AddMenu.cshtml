@@ -1,0 +1,19 @@
+﻿@page
+@model WebApplication1.Pages.Admin.AddMenuModel
+@{
+    ViewData["Title"] = "AddMenu";
+    Layout = "~/Pages/_Layout.cshtml";
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+}
+
+<h2>AddMenu</h2>
+
+<p>please enter in the stationary details</p>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <span asp-validation-for="Menu.Name"></span>
+    <div>Name: <input asp-for="Menu.Name" /></div>
+    <div>Price: <input asp-for="Menu.Price" /></div>
+    <div>Decription:  <input asp-for="Menu.Description" /></div>
+    <input type="submit" />
+</form>

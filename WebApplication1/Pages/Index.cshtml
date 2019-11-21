@@ -5,6 +5,7 @@
     <script type="text/javascript" src="~/JavaScript/Index.js"></script>
     ViewData["Title"] = "Index";
     Layout = "~/Pages/_Layout.cshtml";
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 }
 
 <img class="Logo" src="~/Img/Latest.JPG" alt="Logo" />
@@ -18,7 +19,7 @@
 <main class="site-wrapper">
     <section class="gallery">
         <figure class="gallery__item">
-            <img src="~/Img/Index1.jpg"alt="" class="gallery__image">
+            <img src="~/Img/Index1.jpg" alt="" class="gallery__image">
             <figcaption class="gallery__image-caption">
                 Welcome to Genesis. Full of great experience.
             </figcaption>
@@ -58,7 +59,7 @@
         <figure class="gallery__item">
             <img class="gallery__image" src="~/Img/Index6.jpg">
             <figcaption class="gallery__image-caption">
-               5 star dessert.
+                5 star dessert.
             </figcaption>
         </figure>
 
