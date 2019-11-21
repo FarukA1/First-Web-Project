@@ -8,15 +8,6 @@
     .Logo {
         position: center;
     }
-
-    .demo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0.6;
-        width: 100%;
-        height: 70px;
-    }
 }
 @media only screen and (min-width: 33.75em) {
     .gallery__item {
