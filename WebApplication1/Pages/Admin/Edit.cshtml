@@ -1,0 +1,22 @@
+﻿@page "{id:int}"
+@model WebApplication1.Pages.Admin.EditModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/_Layout.cshtml";
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+}
+
+<h2>Edit Item - @Model.Item.Name</h2>
+<form method="post">
+    <input asp-for="Item.ID" type="hidden" />
+    <div>Item Name</div>
+    <div><input asp-for="Item.Name" /></div>
+    <div>Item Price</div>
+    <div><input asp-for="Item.Price" /></div>
+    <div>Item Description</div>
+    <div><input asp-for="Item.Description" /></div>
+    <div>
+        <button type="submit" asp-page-handler="Save">Save</button>
+    </div>
+</form>
+

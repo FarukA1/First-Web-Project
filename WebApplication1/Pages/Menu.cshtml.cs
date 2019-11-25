@@ -28,5 +28,16 @@ namespace WebApplication1.Pages
             Menu = _db.Menus.FromSql("SELECT* FROM Menus WHERE Name LIKE '" + Search + "%'").ToList();
             return Page();
         }
+
+        public async Task<IActionResult> OnPostDeleteAsync(int itemID)
+        {
+            var item =await _db.Menus.FindAsync(itemID);
+            if(item != null)
+            {
+                _db.Menus.Remove(item);
+                await _db.SaveChangesAsync();
+            }
+            return RedirectToPage();
+        }
     }
 }
