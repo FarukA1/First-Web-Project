@@ -15,5 +15,6 @@ namespace WebApplication1.Data
         public decimal Price { get; set; } 
         [StringLength(250)]
         public string Description { get; set; } 
+        public string Image { get; set; }
     }
 }

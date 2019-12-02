@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +17,11 @@ namespace WebApplication1.Pages.Admin
         [BindProperty]
         public Menu Item { get; set; }
         private readonly AppDbContext _db;
-        public EditModel(AppDbContext db) { _db = db; }
+        [BindProperty]
+        public IFormFile Pic { get; set; }
+        private readonly IHostingEnvironment _he;
+        public EditModel(AppDbContext db, IHostingEnvironment he) { _db = db; _he = he; }
+      
 
 
         public async Task<IActionResult> OnGetAsync(int id)
@@ -33,7 +40,12 @@ namespace WebApplication1.Pages.Admin
             {
                 return Page();
             }
-
+            if (Pic != null)
+            {
+                var filename = Path.Combine(_he.WebRootPath, "Img", Path.GetFileName(Pic.FileName));
+                Pic.CopyTo(new FileStream(filename, FileMode.Create));
+                Item.Image = Path.Combine("Img", Path.GetFileName(Pic.FileName));
+            }
             _db.Attach(Item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             try
             {

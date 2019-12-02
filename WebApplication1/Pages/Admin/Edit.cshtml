@@ -7,7 +7,7 @@
 }
 
 <h2>Edit Item - @Model.Item.Name</h2>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <input asp-for="Item.ID" type="hidden" />
     <div>Item Name</div>
     <div><input asp-for="Item.Name" /></div>
@@ -15,6 +15,8 @@
     <div><input asp-for="Item.Price" /></div>
     <div>Item Description</div>
     <div><input asp-for="Item.Description" /></div>
+    <div>Item Image</div>
+    <div>Select a picture:<br /><input type="file" name="Pic" /><br /></div>
     <div>
         <button type="submit" asp-page-handler="Save">Save</button>
     </div>
