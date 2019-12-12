@@ -59,6 +59,12 @@ body {
     width: 100%;
     left: 0;
 }
+.Logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 
 .ftco-footer {
     background-color: #333;
