@@ -10,20 +10,22 @@
 
 
 <form method="POST">
-<div class="mainMenu">
+<div class="container">
     
         @foreach (var stat in Model.Menu)
         {
-    <div class="gallery">
-       
-            <img class="img" src="@Url.Content(stat.Image)" alt="@stat.Image">
-        <div class="menuName">@stat.Name - @stat.Price</div>
-        <div class="desc">@stat.Description</div>
-            <div class="Admin">
-                <a asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit</a>
-                <button type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
+    <div class="card">
+        <div class="imgBx">
+            <img src="@Url.Content(stat.Image)" data-loading-text="img">
+        </div>
+        <div class="content">
+            <div>
+                <h3>@stat.Name - @stat.Price.ToString("C")</h3>
+                <p>@stat.Description</p>
+                <a asp-page="#">Order Now</a>
             </div>
         </div>
+    </div>
         }
    
 </div>
