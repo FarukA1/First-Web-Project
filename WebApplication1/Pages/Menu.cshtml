@@ -9,27 +9,22 @@
 }
 
 
-<form method="POST">
-<div class="container">
-    
-        @foreach (var stat in Model.Menu)
-        {
-    <div class="card">
-        <div class="imgBx">
-            <img src="@Url.Content(stat.Image)" data-loading-text="img">
+    <form method="POST">
+        <div class="columns">
+            @foreach (var stat in Model.Menu)
+            {
+                <ul class="price">
+                    <li class="header">@stat.Name</li>
+                    <li class="grey">@stat.Price.ToString("C")</li>
+                    <li><img src="@Url.Content(stat.Image)" /></li>
+                    <li>@stat.Description</li>
+                    <li class="grey"><a href="#" class="button">Order Now</a></li>
+                </ul>
+            }
+
         </div>
-        <div class="content">
-            <div>
-                <h3>@stat.Name - @stat.Price.ToString("C")</h3>
-                <p>@stat.Description</p>
-                <a asp-page="#">Order Now</a>
-            </div>
-        </div>
-    </div>
-        }
-   
-</div>
-</form>
+
+    </form>
 
 <form method="POST">
     <table class="table">

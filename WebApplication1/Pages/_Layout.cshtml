@@ -11,6 +11,14 @@
 <body>
     <header>
         <nav class="topnav">
+            <input type="checkbox" id="nav" class="hidden" />
+            <label for="nav" class="nav-btn">
+                <i></i>
+                <i></i>
+                <i></i>
+            </label>
+            
+            <div class="nav-wrapper">
             <ul class="active">
                 <li>
                     <a asp-page="/Index">Home</a>
@@ -31,6 +39,7 @@
                     <a asp-page="/Contact">Contact</a>
                 </li>
             </ul>
+                </div>
         </nav>
     </header>
     <img class="Logo" src="~/Img/Latest.JPG" alt="Logo" />
