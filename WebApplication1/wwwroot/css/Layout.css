@@ -31,6 +31,9 @@
                 text-align: center;
                 margin-bottom: 10px;
             }
+            .nav-wrapper ul li:nth-child(7){
+                background-color: #ffff00;
+            }
 
                 .nav-wrapper ul li:nth-child(1) a {
                     transition-delay: 0.2s;
