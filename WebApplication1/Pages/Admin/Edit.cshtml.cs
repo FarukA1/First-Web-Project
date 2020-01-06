@@ -53,7 +53,7 @@ namespace WebApplication1.Pages.Admin
             }
             catch(DbUpdateConcurrencyException e)
             {
-                throw new Exception($"Item{Item.ID} not found", e);
+                throw new Exception($"Item{Item.ID} not found" + e);
             }
             return RedirectToPage("/Index");
         }
