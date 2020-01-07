@@ -8,9 +8,11 @@ using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApplication1.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication1.Pages.Admin
 {
+    [Authorize(Roles ="Admin")]
     public class AddMenuModel : PageModel
     {
         private AppDbContext _db;

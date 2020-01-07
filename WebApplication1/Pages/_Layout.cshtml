@@ -19,30 +19,37 @@
             </label>
             
             <div class="nav-wrapper">
-            <ul class="active">
-                <li>
-                    <a asp-page="/Index">Home</a>
-                </li>
-                <li>
-                    <a asp-page="/Menu">Menu</a>
-                </li>
-                <li>
-                    <a asp-page="/Admin/AddMenu">AddMenu</a>
-                </li>
-                <li>
-                    <a asp-page="/Order">Order</a>
-                </li>
-                <li>
-                    <a asp-page="/About">About Us</a>
-                </li>
-                <li>
-                    <a asp-page="/Contact">Contact</a>
-                </li>
-                <li>
-                    <a asp-page="/Account/Register">Register</a>
-                </li>
-            </ul>
-                </div>
+                <ul class="active">
+                    <li>
+                        <a asp-page="/Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Menu">Menu</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Admin/AddMenu">AddMenu</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Order">Order</a>
+                    </li>
+                    <li>
+                        <a asp-page="/About">About Us</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Contact">Contact</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Account/Login">Login</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Account/Register">Register</a>
+                    </li>
+
+                </ul>
+                <form asp-controller="Account" asp-action="Logout" method="post">
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
         </nav>
     </header>
     <img class="Logo" src="~/Img/Latest.JPG" alt="Logo" />
@@ -72,6 +79,9 @@
                     </li>
                     <li>
                         <a asp-page="/Contact">Contact</a>
+                    </li>
+                    <li>
+                        <a asp-page="/Account/Login">Login</a>
                     </li>
                 </ul>
             </nav>

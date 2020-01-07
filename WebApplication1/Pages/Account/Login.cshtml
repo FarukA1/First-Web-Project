@@ -1,15 +1,14 @@
 ﻿@page
-@model WebApplication1.Pages.Account.RegisterModel
+@model WebApplication1.Pages.Account.LoginModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Login";
     Layout = "~/Pages/_Layout.cshtml";
-    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-
-<h2>Register</h2>
+<h2>Log in</h2>
 <form method="post">
-    <h4>Create a new account</h4>
+    <h4>Please enter your log in</h4>
     <hr />
     <div asp-validation-summary="All"></div>
     <div>
@@ -22,12 +21,11 @@
         <input asp-for="Input.Password" />
         <span asp-validation-for="Input.Password"></span>
     </div>
+
+
     <div>
-        <label asp-for="Input.ConfirmPassword"></label>
-        <input asp-for="Input.ConfirmPassword" />
-        <span asp-validation-for="Input.ConfirmPassword"></span>
+        <button type="submit">Log in</button>
     </div>
-    <button type="submit">Register</button>
 </form>
-<a>Already have an account? Sign in</a>
+
 

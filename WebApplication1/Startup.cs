@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 
 namespace WebApplication1
 {
@@ -29,17 +30,55 @@ namespace WebApplication1
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
+            
+                services.ConfigureApplicationCookie(options =>
+                { 
+                options.LoginPath = new PathString("/Account/Login");
+                options.AccessDeniedPath = new PathString("/Account/AccessDenied");
+                    options.LoginPath = new PathString("/Index");
+                    }
+            );
         }
+    
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvc();
+            CreateRoles(serviceProvider).Wait();
             app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseMvc();
+            
         }
+        private async Task CreateRoles(IServiceProvider serviceProvider)
+        {
+            var RoleManager = serviceProvider.
+                GetRequiredService<RoleManager<IdentityRole>>();
+            var UserManager = serviceProvider.
+                GetRequiredService<UserManager<ApplicationUser>>();
+
+            string[] roleNames = { "Admin", "Member" };
+
+            foreach (var roleName in roleNames)
+            {
+                var roleExist = await RoleManager.RoleExistsAsync(roleName);
+                if (!roleExist)
+                {
+                    //create the roles and seed them to the database
+                    var roleResult = await RoleManager.
+                        CreateAsync(new IdentityRole(roleName));
+                }
+            }
+            var _user = await UserManager.FindByEmailAsync("Admin@Chester.ac.uk");
+            if (_user != null)
+            {
+                await UserManager.AddToRoleAsync(_user, "Admin");
+            }
+        }
+
     }
 }
