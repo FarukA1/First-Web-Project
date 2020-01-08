@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication1.Pages.Admin
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles ="Admin")] 
     public class AddMenuModel : PageModel
     {
         private AppDbContext _db;
