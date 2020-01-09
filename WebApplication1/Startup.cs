@@ -37,7 +37,6 @@ namespace WebApplication1
                 { 
                 options.LoginPath = new PathString("/Account/Login");
                 options.AccessDeniedPath = new PathString("/Account/AccessDenied");
-                    options.LoginPath = new PathString("/Index");
                     }
             );
         }

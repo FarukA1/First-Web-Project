@@ -10,7 +10,6 @@ using WebApplication1.Data;
 
 namespace WebApplication1.Pages
 {
-    [Authorize]
     public class MenuModel : PageModel
     {
         private readonly AppDbContext _db;
