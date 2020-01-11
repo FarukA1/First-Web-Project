@@ -1,4 +1,8 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Identity
+@using WebApplication1.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 <!DOCTYPE html>
 
 <html>
@@ -17,7 +21,7 @@
                 <i></i>
                 <i></i>
             </label>
-            
+
             <div class="nav-wrapper">
                 <ul class="active">
                     <li>
@@ -26,6 +30,10 @@
                     <li>
                         <a asp-page="/Menu">Menu</a>
                     </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        
+                    }
                     <li>
                         <a asp-page="/Admin/AddMenu">AddMenu</a>
                     </li>
@@ -42,10 +50,11 @@
                         <a asp-page="/Account/Login">Login</a>
                     </li>
                     <li>
-                        <a asp-page="/Account/Register">Register</a>
+                        <a asp-page="/Checkout">Checkout</a>
                     </li>
 
-                </ul>
+
+</ul>
                 <form asp-controller="Account" asp-action="Logout" method="post">
                     <button type="submit">Logout</button>
                 </form>

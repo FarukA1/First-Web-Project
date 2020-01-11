@@ -74,7 +74,7 @@ namespace WebApplication1
                         CreateAsync(new IdentityRole(roleName));
                 }
             }
-            var _user = await UserManager.FindByEmailAsync("Admin@Chester.ac.uk");
+            var _user = await UserManager.FindByEmailAsync("1809152@chester.ac.uk");
             if (_user != null)
             {
                 await UserManager.AddToRoleAsync(_user, "Admin");

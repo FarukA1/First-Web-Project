@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApplication1.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Pages.Account
 {
@@ -13,13 +14,20 @@ namespace WebApplication1.Pages.Account
     {
         [BindProperty]
         public RegistrationModel Input { get; set; }
+
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public RegisterModel(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        private AppDbContext _db;
+        public CheckoutCustomer Customer = new CheckoutCustomer();
+        public Basket Basket = new Basket();
+
+
+        public RegisterModel(AppDbContext db, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _db = db;
         }
         public  async Task<IActionResult>  OnPostAsync()
         {
@@ -30,6 +38,10 @@ namespace WebApplication1.Pages.Account
                 if(result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
+                    NewBasket(Input.Email);
+                    NewCustomer(Input.Email);
+                    await _db.SaveChangesAsync();
+
                     return RedirectToPage("/Index");
                 }
                 foreach (var error in result.Errors)
@@ -39,6 +51,33 @@ namespace WebApplication1.Pages.Account
             }
             return Page();
         }
-        
+        public void NewBasket(string Email)
+        {
+            Basket.Email = Email;
+            var currentBasket = _db.Baskets.FromSql("SELECT * From Baskets")
+                .OrderByDescending(b => b.BasketID)
+                .FirstOrDefault();
+            if (currentBasket == null)
+            {
+                Basket.BasketID = 1;
+            }
+            else
+            {
+                Basket.BasketID = currentBasket.BasketID + 1;
+            }
+
+            _db.Baskets.Add(Basket);
+        }
+
+        public void NewCustomer(string Email)
+        {
+            Customer.Email = Email;
+            Customer.BasketID = Basket.BasketID;
+            _db.CheckoutCustomers.Add(Customer);
+        }
+
+
+
+
     }
 }
