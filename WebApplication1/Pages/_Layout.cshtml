@@ -32,7 +32,7 @@
                     </li>
                     @if (User.IsInRole("Admin"))
                     {
-                        
+
                     }
                     <li>
                         <a asp-page="/Admin/AddMenu">AddMenu</a>
@@ -47,17 +47,26 @@
                         <a asp-page="/Contact">Contact</a>
                     </li>
                     <li>
-                        <a asp-page="/Account/Login">Login</a>
-                    </li>
-                    <li>
                         <a asp-page="/Checkout">Checkout</a>
                     </li>
-
-
-</ul>
-                <form asp-controller="Account" asp-action="Logout" method="post">
-                    <button type="submit">Logout</button>
-                </form>
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <li>
+                            <a asp-page="/Account/Login">Login</a>
+                        </li>
+                        
+                    }
+                   
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li>
+                            <form asp-controller="Account" asp-action="Logout" method="post">
+                                <button class="Logout" type="submit">Logout</button>
+                            </form>
+                        </li>
+                      
+                    }
+                </ul>              
             </div>
         </nav>
     </header>

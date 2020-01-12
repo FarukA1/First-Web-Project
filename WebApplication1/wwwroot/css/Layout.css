@@ -31,9 +31,10 @@
                 text-align: center;
                 margin-bottom: 10px;
             }
-            .nav-wrapper ul li:nth-child(7){
-                background-color: #ffff00;
-            }
+
+                .nav-wrapper ul li:nth-child(7) {
+                    background-color: #ffff00;
+                }
 
                 .nav-wrapper ul li:nth-child(1) a {
                     transition-delay: 0.2s;
@@ -75,6 +76,24 @@
                     transition: all 0.2s ease;
                 }
 
+    .Logout {
+        padding: 10px 24px;
+        opacity: 0;
+        color: #000;
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1.2px;
+        transform: translateX(-20px);
+        transition: all 0.2s ease;
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+
     .nav-btn {
         position: fixed;
         right: 10px;
@@ -96,18 +115,18 @@
             margin-left: 14px;
         }
 
-        .nav-btn i:nth-child(1) {
-            margin-top: 16px;
-        }
+            .nav-btn i:nth-child(1) {
+                margin-top: 16px;
+            }
 
-        .nav-btn i:nth-child(2) {
-            margin-top: 4px;
-            opacity: 1;
-        }
+            .nav-btn i:nth-child(2) {
+                margin-top: 4px;
+                opacity: 1;
+            }
 
-        .nav-btn i:nth-child(3) {
-            margin-top: 4px;
-        }
+            .nav-btn i:nth-child(3) {
+                margin-top: 4px;
+            }
 }
 
 body {
@@ -146,23 +165,59 @@ body {
             position: relative;
         }
 
-            .topnav .active li a:after {
-                background: none repeat scroll 0 0 transparent;
-                bottom: 0;
-                content: "";
-                display: block;
-                height: 2px;
-                left: 50%;
-                position: absolute;
-                background: #ffff00;
-                transition: width 0.3s ease 0s, left 0.3s ease 0s;
-                width: 0;
-            }
+.Logout {
+    font-style: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    padding: 20px;
+    margin: 0;
+    letter-spacing: 0.15em;
+    position: relative;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+}
 
-            .topnav .active li a:hover:after {
-                width: 100%;
-                left: 0;
-            }
+.topnav .active li a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #ffff00;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.Logout:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #ffff00;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.topnav .active li a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.Logout {
+    width: 100%;
+    left: 0;
+}
 
 
 #nav:checked + .nav-btn {

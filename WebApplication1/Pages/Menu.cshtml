@@ -5,50 +5,65 @@
     Layout = "~/Pages/_Layout.cshtml";
     @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
     <link rel="stylesheet" type="text/css" href="~/css/Menu.css" />
-
+    @using Microsoft.AspNetCore.Identity
+    @using WebApplication1.Data
+    @inject SignInManager<ApplicationUser> SignInManager
+    @inject UserManager<ApplicationUser> UserManager
 }
-    <form method="POST">
-        <h2>Search</h2>
 
-        <div>Search: <input asp-for="Search" /></div>
-        <button type="submit" asp-page-handler="Search">Submit</button>
-        <div class="columns">
-            @foreach (var stat in Model.Menu)
-            {
-                <div class="background">
-                    <div class="container">
-                        <div class="panel pricing-table">
+<form method="POST">
+    <h2>Search</h2>
 
-                            <div class="pricing-plan">
-                                <img src="@Url.Content(stat.Image)" alt="" class="pricing-img">
-                                <h2 class="pricing-header">@stat.Name</h2>
-                                <ul class="pricing-features">
-                                    <li class="pricing-features-item">@stat.Description</li>
+    <div>Search: <input asp-for="Search" /></div>
+    <button type="submit" asp-page-handler="Search">Submit</button>
+    <div class="columns">
+        @foreach (var stat in Model.Menu)
+        {
+            <div class="background">
+                <div class="container">
+                    <div class="panel pricing-table">
 
-                                </ul>
-                                <span class="pricing-price">@stat.Price.ToString("C")</span>
-                                <button type="submit" asp-page-handler="Buy"
-                                        asp-route-itemID="@stat.ID">
-                                    Buy
-                                </button>
+                        <div class="pricing-plan">
+                            <img src="@Url.Content(stat.Image)" alt="" class="pricing-img">
+                            <h2 class="pricing-header">@stat.Name</h2>
+                            <ul class="pricing-features">
+                                <li class="pricing-features-item">@stat.Description</li>
 
+                            </ul>
+                            <span class="pricing-price">@stat.Price.ToString("C")</span>
+                            <!--
+                        <button type="submit" asp-page-handler="Buy"
+                                asp-route-itemID="@stat.ID">
+                            Buy
+                        </button>
+        -->
+                            @if (!SignInManager.IsSignedIn(User))
+                            {
+                                <a asp-page="/Account/Login">Sign in her to make an order</a>
+                               
+                            }
+
+                            @if (SignInManager.IsSignedIn(User))
+                            {
                                 <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
 
-                            </div>
-                            @if (User.IsInRole("Admin"))
-                            {
-
                             }
-                            <a asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit</a>
-                            <button type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
+
                         </div>
+                        @if (User.IsInRole("Admin"))
+                        {
+
+                        }
+                        <a asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit</a>
+                        <button type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
                     </div>
                 </div>
-            }
+            </div>
+        }
 
-        </div>
+    </div>
 
-    </form>
+</form>
 
 <!--
 <form method="POST">
@@ -79,7 +94,7 @@
             }
         </tbody>
     </table>
-   
+
     <h2>Search</h2>
 
         <div>Search: <input asp-for="Search" /></div>
