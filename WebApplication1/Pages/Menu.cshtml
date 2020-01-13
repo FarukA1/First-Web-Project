@@ -32,21 +32,20 @@
                             </ul>
                             <span class="pricing-price">@stat.Price.ToString("C")</span>
                             <!--
-                        <button type="submit" asp-page-handler="Buy"
-                                asp-route-itemID="@stat.ID">
-                            Buy
-                        </button>
-        -->
+                    <button type="submit" asp-page-handler="Buy"
+                            asp-route-itemID="@stat.ID">
+                        Buy
+                    </button>
+    -->
                             @if (!SignInManager.IsSignedIn(User))
                             {
-                                <a asp-page="/Account/Login">Sign in her to make an order</a>
-                               
+                                <a asp-page="/Account/Login">Sign in here to make an order</a>
+
                             }
 
                             @if (SignInManager.IsSignedIn(User))
                             {
                                 <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
-
                             }
 
                         </div>

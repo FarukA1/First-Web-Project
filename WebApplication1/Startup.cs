@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using Stripe;
 
 namespace WebApplication1
 {
@@ -39,6 +40,7 @@ namespace WebApplication1
                 options.AccessDeniedPath = new PathString("/Account/AccessDenied");
                     }
             );
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
         }
     
 
@@ -49,6 +51,9 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
+            StripeConfiguration.ApiKey =
+            Configuration.GetSection("Stripe")["SecretKey"];
+
             CreateRoles(serviceProvider).Wait();
             app.UseStaticFiles();
             app.UseAuthentication();
