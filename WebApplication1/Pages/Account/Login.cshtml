@@ -3,25 +3,26 @@
 @{
     ViewData["Title"] = "Login";
     Layout = "~/Pages/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/Login.css" />
 }
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<h2>Log in</h2>
-<form method="post">
-    <h4>Please enter your log in</h4>
+<!----<h2>Log in</h2>  -->
+<form class="box" method="post">
+    <h4>Please enter your log in details</h4>
     <hr />
     <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Input.Email"></label>
-        <input asp-for="Input.Email" />
+        <input type="text" asp-for="Input.Email" />
         <span asp-validation-for="Input.Email"></span>
     </div>
     <div>
         <label asp-for="Input.Password"></label>
-        <input asp-for="Input.Password" />
+        <input type="password" asp-for="Input.Password" />
         <span asp-validation-for="Input.Password"></span>
     </div>
-    <div>Don't have an account? <a asp-page="/Account/Register">Register here</a></div>
+    <div>Don't have an account? <a class="Register." asp-page="/Account/Register">Register here</a></div>
 
     <div>
         <button type="submit">Log in</button>
