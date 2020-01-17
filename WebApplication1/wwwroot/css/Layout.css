@@ -261,6 +261,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+    position: inherit;
 }
 
 .ftco-footer {

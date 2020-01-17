@@ -32,7 +32,7 @@
             border-color: gray;
         }
 
-button[type = "submit"] {
+input[type = "submit"] {
     border: 0;
     background: none;
     display: block;
@@ -49,11 +49,13 @@ button[type = "submit"] {
     cursor: pointer;
 }
 
-    button[type = "submit"]:hover {
+    input[type = "submit"]:hover {
         background: gray;
     }
 
-h4 {
+
+
+p {
     text-align: center;
     font-size: 20px;
 }

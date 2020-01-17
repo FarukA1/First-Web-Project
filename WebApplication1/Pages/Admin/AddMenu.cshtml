@@ -4,17 +4,18 @@
     ViewData["Title"] = "AddMenu";
     Layout = "~/Pages/_Layout.cshtml";
     @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+    <link rel="stylesheet" href="~/css/AddMenu.css" />
+    
 }
 
-<h2>AddMenu</h2>
 
-<p>please enter in the stationary details</p>
-<form method="post" enctype="multipart/form-data">
+<p>please enter in the menu details</p>
+<form class="box" method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All"></div>
     <span asp-validation-for="Menu.Name"></span>
-    <div>Name: <input asp-for="Menu.Name" /></div>
-    <div>Price: <input asp-for="Menu.Price" /></div>
-    <div>Decription:  <input asp-for="Menu.Description" /></div>
-    <div>Select a picture:<br/><input type="file" name="Pic"/><br/></div>
+    <div>Name: <input type="text" asp-for="Menu.Name" /></div>
+    <div>Price: <input type="text" asp-for="Menu.Price" /></div>
+    <div>Decription:  <input type="text" asp-for="Menu.Description" /></div>
+    <div>Select a picture:<input type="file" name="Pic"/></div>
     <input type="submit" />
 </form>
