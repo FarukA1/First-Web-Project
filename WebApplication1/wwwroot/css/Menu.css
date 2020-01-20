@@ -162,3 +162,50 @@ html {
         .pricing-button.is-featured:active {
             background-color: #ffff00;
         }
+
+.boxSearch {
+    display: block;
+    width: 50%;
+    padding: 10px;
+}
+
+h2 {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #000;
+    font-size: 24px;
+}
+
+input {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: 5s;
+}
+
+    input[type="text"] {
+        background: grey;
+        width: 340px;
+        height: 50px;
+        border: none;
+        outline: none;
+        padding: 0 25px;
+        border-radius: 25px 0 0 25px;
+    }
+
+    input[type="submit"] {
+        position: relative;
+        border-radius: 0 25px 25px 0;
+        width: 150px;
+        height: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #000;
+        color: #fff;
+    }
+
+        input[type="submit"]:hover {
+            background: #ffff00;
+        }

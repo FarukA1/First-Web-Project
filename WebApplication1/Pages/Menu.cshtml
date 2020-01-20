@@ -11,11 +11,14 @@
     @inject UserManager<ApplicationUser> UserManager
 }
 
+
 <form method="POST">
     <h2>Search</h2>
-
-    <div>Search: <input asp-for="Search" /></div>
-    <button type="submit" asp-page-handler="Search">Submit</button>
+    <div class="boxSearch">
+        <input class="search" type="text" placeholder="Type..." asp-for="Search" />
+        <input type="submit" name="" value="Search" asp-page-handler="Search" />
+    </div>
+    
     <div class="columns">
         @foreach (var stat in Model.Menu)
         {
