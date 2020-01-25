@@ -1,5 +1,5 @@
 ﻿
-@media only screen and (max-width:650px) {
+@media only screen and (max-width:850px) {
     .menu, .main, .right {
         width: 100%;
     }
@@ -18,9 +18,9 @@
 
         .nav-wrapper ul {
             position: absolute;
-            top:50%;
+            top: 50%;
             transform: translateY(0);
-            width: 100%;
+            width: 70%;
         }
 
             .nav-wrapper ul li {
@@ -30,10 +30,6 @@
                 text-align: center;
                 margin-bottom: 10px;
             }
-
-                .nav-wrapper ul li:nth-child(7) {
-                    background-color: #ffff00;
-                }
 
                 .nav-wrapper ul li:nth-child(1) a {
                     transition-delay: 0.2s;
@@ -59,6 +55,10 @@
                     transition-delay: 0.7s;
                 }
 
+                .nav-wrapper ul li:nth-child(7) {
+                    \ transition-delay: 0.8s;
+                }
+
                 .nav-wrapper ul li:not(:first-child) {
                     margin-left: 0;
                 }
@@ -75,23 +75,6 @@
                     transition: all 0.2s ease;
                 }
 
-    .Logout {
-        padding: 10px 24px;
-        opacity: 0;
-        color: #000;
-        font-size: 14px;
-        text-align: center;
-        font-weight: bold;
-        letter-spacing: 1.2px;
-        transform: translateX(-20px);
-        transition: all 0.2s ease;
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
-    }
 
     .nav-btn {
         position: fixed;
@@ -128,18 +111,27 @@
             }
 }
 
+
 body {
     background-color: #ffffff;
     font: bold 14px/1.4 'Open Sans', arial, sans-serif;
 }
 
 
+.topLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    position: inherit;
+    padding: 10px;
+}
 
 .topnav .active {
     background-color: #ffffff;
     overflow: hidden;
     color: #000000;
-    padding: 0;
+    padding: 40px;
     text-align: center;
     margin: 0;
     -webkit-transition: max-height 0.4s;
@@ -276,6 +268,10 @@ body {
     color: #fff;
     font-size: 20px;
     padding: 40px
+}
+.faruk{
+    text-align: center;
+    padding: 30px;
 }
 
 .ftco-footer .active-2 li {

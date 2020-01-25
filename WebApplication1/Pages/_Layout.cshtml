@@ -14,6 +14,7 @@
 </head>
 <body>
     <header>
+        <img class="topLogo" src="~/Img/topLogo.jpg">
         <nav class="topnav">
             <input type="checkbox" id="nav" class="hidden" />
             <label for="nav" class="nav-btn">
@@ -38,9 +39,6 @@
                         <a asp-page="/Admin/AddMenu">AddMenu</a>
                     </li>
                     <li>
-                        <a asp-page="/Order">Order</a>
-                    </li>
-                    <li>
                         <a asp-page="/About">About Us</a>
                     </li>
                     <li>
@@ -54,9 +52,9 @@
                         <li>
                             <a asp-page="/Account/Login">Login</a>
                         </li>
-                        
+
                     }
-                   
+
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <li>
@@ -64,16 +62,23 @@
                                 <button class="Logout" type="submit">Logout</button>
                             </form>
                         </li>
-                      
+
                     }
-                </ul>              
+                </ul>
             </div>
         </nav>
     </header>
-    <img class="Logo" src="~/Img/Latest.JPG" alt="Logo" />
+    <!--
+        <img class="Logo" src="~/Img/Latest.JPG" alt="Logo" />
+    -->
+
     <div>
         @RenderBody()
     </div>
+    <hr/>
+    <footer>
+        <p class="faruk">Faruk Awofeso 	&copy; copyright </p>
+    </footer>
     <!--
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container-1">
