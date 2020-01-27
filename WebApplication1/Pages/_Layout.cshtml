@@ -33,11 +33,11 @@
                     </li>
                     @if (User.IsInRole("Admin"))
                     {
-
+                        <li>
+                            <a asp-page="/Admin/AddMenu">AddMenu</a>
+                        </li>
                     }
-                    <li>
-                        <a asp-page="/Admin/AddMenu">AddMenu</a>
-                    </li>
+
                     <li>
                         <a asp-page="/About">About Us</a>
                     </li>
@@ -75,7 +75,7 @@
     <div>
         @RenderBody()
     </div>
-    <hr/>
+ 
     <footer>
         <p class="faruk">Faruk Awofeso 	&copy; copyright </p>
     </footer>

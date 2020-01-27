@@ -1,4 +1,5 @@
-﻿@media only screen and (max-width:600px) {
+﻿
+@media only screen and (max-width:600px) {
     .menu, .main, .right {
         width: 100%;
     }
@@ -117,6 +118,7 @@ html {
     letter-spacing: 1px;
     margin: 50px 0 25px;
     font-weight: bold;
+    width: 100%;
 }
 
 .pricing-features-item {
@@ -124,6 +126,8 @@ html {
     font-size: 12px;
     line-height: 1.5;
     padding: 15px 0;
+    list-style-type: none;
+    width: 100%;
 }
 
     .pricing-features-item:last-child {
@@ -131,7 +135,7 @@ html {
     }
 
 .pricing-price {
-    color: #ffff00;
+    color: #000;
     display: block;
     font-size: 32px;
     font-weight: 700;
@@ -140,17 +144,20 @@ html {
 .pricing-button {
     border: 1px solid #ffff00;
     border-radius: 10px;
-    color: #ffff00;
+    color: #000;
     display: inline-block;
     margin: 25px 0;
     padding: 15px 35px;
     text-decoration: none;
     transition: all 150ms ease-in-out;
+    font-weight: bold;
 }
 
     .pricing-button:hover,
     .pricing-button:focus {
-        background-color: #ffff00;
+        background-color: #000;
+        color: #ffff00;
+        font-weight: bold;
     }
 
     .pricing-button.is-featured {
@@ -162,50 +169,76 @@ html {
         .pricing-button.is-featured:active {
             background-color: #ffff00;
         }
+.orderDe {
+    color: #000;
+}
+
 
 .boxSearch {
-    display: block;
-    width: 50%;
-    padding: 10px;
-}
-
-h2 {
-    margin: 0 0 10px;
-    padding: 0;
-    color: #000;
-    font-size: 24px;
-}
-
-input {
+    width: 100%;
     position: relative;
-    display: inline-block;
-    font-size: 20px;
-    box-sizing: border-box;
-    transition: 5s;
+    display: flex;
 }
 
-    input[type="text"] {
-        background: grey;
-        width: 340px;
-        height: 50px;
-        border: none;
-        outline: none;
-        padding: 0 25px;
-        border-radius: 25px 0 0 25px;
+.search {
+    width: 100%;
+    border: 3px solid #000;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #000;
+}
+
+    .search:focus {
+        color: grey;
     }
 
-    input[type="submit"] {
-        position: relative;
-        border-radius: 0 25px 25px 0;
-        width: 150px;
-        height: 50px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        background: #000;
-        color: #fff;
-    }
+.searchButton {
+    width: 100px;
+    height: 36px;
+    border: 1px solid #000;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
 
-        input[type="submit"]:hover {
-            background: #ffff00;
-        }
+
+.wrap {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.adminOnly {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.deleteButton {
+    border: 1px solid #ffff00;
+    border-radius: 10px;
+    color: #000;
+    display: inline-block;
+    margin: 25px 0;
+    padding: 15px 35px;
+    text-decoration: none;
+    transition: all 150ms ease-in-out;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.editButton {
+    color: #000;
+}
+
+.deleteButton:hover,
+.deleteButton:focus {
+    background-color: #000;
+    color: #ffff00;
+    font-weight: bold;
+}

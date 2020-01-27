@@ -13,11 +13,14 @@
 
 
 <form method="POST">
-    <h2>Search</h2>
-    <div class="boxSearch">
-        <input class="search" type="text" placeholder="Type..." asp-for="Search" />
-        <input type="submit" name="" value="Search" asp-page-handler="Search" />
+ 
+    <div class="wrap">
+        <div class="boxSearch">
+            <input class="search" type="text" placeholder="What meal are you looking for?" asp-for="Search" />
+            <input type="submit" name="" value="Search" asp-page-handler="Search" class="searchButton" /> <i class="faruk fa-search"></i>
+        </div>
     </div>
+    
     
     <div class="columns">
         @foreach (var stat in Model.Menu)
@@ -42,22 +45,25 @@
     -->
                             @if (!SignInManager.IsSignedIn(User))
                             {
-                                <a asp-page="/Account/Login">Sign in here to make an order</a>
+                                <a class="orderDe" asp-page="/Account/Login">Sign in here to make an order</a>
 
                             }
-
-                            @if (SignInManager.IsSignedIn(User))
+                            @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
                             {
                                 <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
                             }
-
+                         
                         </div>
+
                         @if (User.IsInRole("Admin"))
                         {
+                            <div class="adminOnly">
+                                <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
+                                <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
+                            </div>
 
                         }
-                        <a asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit</a>
-                        <button type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
+
                     </div>
                 </div>
             </div>
