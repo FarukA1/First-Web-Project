@@ -44,9 +44,13 @@
                     <li>
                         <a asp-page="/Contact">Contact</a>
                     </li>
+                    @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
+                    {
                     <li>
                         <a asp-page="/Checkout">Checkout</a>
                     </li>
+                    }
+                        
                     @if (!SignInManager.IsSignedIn(User))
                     {
                         <li>
