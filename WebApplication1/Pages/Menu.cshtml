@@ -5,7 +5,7 @@
     Layout = "~/Pages/_Layout.cshtml";
     @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
     <link rel="stylesheet" type="text/css" href="~/css/Menu.css" />
-    <script type="text/javascript" src="~/JavaScript/Menu.js"></script>
+    <script src="~/JavaScript/Menu.js"></script>
     @using Microsoft.AspNetCore.Identity
     @using WebApplication1.Data
     @inject SignInManager<ApplicationUser> SignInManager
@@ -23,10 +23,12 @@
     </div>
 
 
+   
 
     <div class="columns">
         @foreach (var stat in Model.Menu)
         {
+            
             <div class="background" id="itemContainer">
                 <div class="container">
                     <div class="panel pricing-table">
@@ -69,11 +71,14 @@
                     </div>
                 </div>
             </div>
+                
         }
 
     </div>
+     
 
 </form>
+
 
 
 

@@ -38,7 +38,7 @@ namespace WebApplication1.Pages.Admin
             }
             _db.Menus.Add(Menu);
             await _db.SaveChangesAsync();
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Menu");
         }
     }
 }
