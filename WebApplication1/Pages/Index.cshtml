@@ -3,7 +3,8 @@
 @{
     <link rel="stylesheet" type="text/css" href="~/css/Index.css" />
     <script type="text/javascript" src="~/JavaScript/Index.js"></script>
-    ViewData["Title"] = "Index";
+
+    ViewData["Title"] = "Genesis";
     Layout = "~/Pages/_Layout.cshtml";
 
 }
@@ -12,6 +13,8 @@
 @using WebApplication1.Data
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+
+
 
 @if (SignInManager.IsSignedIn(User))
 {
