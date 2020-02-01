@@ -14,9 +14,10 @@
 </head>
 <body>
     <header>
+
         <a asp-page="/Index">
-        <img class="topLogo" src="~/Img/topLogo.jpg">
-            </a>
+            <img class="topLogo" src="~/Img/topLogo.jpg">
+        </a>
         <nav class="topnav">
             <input type="checkbox" id="nav" class="hidden" />
             <label for="nav" class="nav-btn">
@@ -48,11 +49,11 @@
                     </li>
                     @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
                     {
-                    <li>
-                        <a asp-page="/Checkout">Checkout</a>
-                    </li>
+                        <li>
+                            <a asp-page="/Checkout">Checkout</a>
+                        </li>
                     }
-                        
+
                     @if (!SignInManager.IsSignedIn(User))
                     {
                         <li>
@@ -81,10 +82,15 @@
     <div>
         @RenderBody()
     </div>
- 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
     <footer>
+
         <p class="faruk">Faruk Awofeso 	&copy; copyright </p>
     </footer>
+
+
     <!--
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container-1">
