@@ -42,7 +42,7 @@ namespace WebApplication1.Pages.Account
                     NewCustomer(Input.Email);
                     await _db.SaveChangesAsync();
 
-                    return LocalRedirect("/Index");
+                    return RedirectToPage("/Index");
                 }
                 foreach (var error in result.Errors)
                 {
