@@ -21,6 +21,9 @@
             <input type="submit" name="" value="Search" asp-page-handler="Search" class="searchButton" /> <i class="faruk fa-search"></i>
         </div>
     </div>
+    <div>
+
+    </div>
 
 
 
@@ -36,42 +39,42 @@
 
                         <div class="pricing-plan">
                             <img src="@Url.Content(stat.Image)" alt="" class="pricing-img">
-                            <h2 class="pricing-header">@stat.Name</h2>
-                            <ul class="pricing-features">
-                                <li class="pricing-features-item">@stat.Description</li>
+                                <h2 class="pricing-header">@stat.Name</h2>
+                                <ul class="pricing-features">
+                                    <li class="pricing-features-item">@stat.Description</li>
 
-                            </ul>
-                            <span class="pricing-price">@stat.Price.ToString("C")</span>
-                            <!--
-                                            <button type="submit" asp-page-handler="Buy"
-                                                    asp-route-itemID="@stat.ID">
-                                                Buy
-                                            </button>
-                            -->
-                            @if (!SignInManager.IsSignedIn(User))
-                            {
-                                <a class="orderDe" asp-page="/Account/Login">Sign in here to make an order</a>
+                                </ul>
+                                <span class="pricing-price">@stat.Price.ToString("C")</span>
+                                <!--
+                        <button type="submit" asp-page-handler="Buy"
+                                asp-route-itemID="@stat.ID">
+                            Buy
+                        </button>
+        -->
+                                @if (!SignInManager.IsSignedIn(User))
+                                {
+                                    <a class="orderDe" asp-page="/Account/Login">Sign in here to make an order</a>
 
-                            }
-                            @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
-                            {
-                                <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
-                            }
+                                }
+                                @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
+                                {
+                                    <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
+                                }
 
-                        </div>
-
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <div class="adminOnly">
-                                <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
-                                <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
                             </div>
 
-                        }
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <div class="adminOnly">
+                                    <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
+                                    <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
+                                </div>
 
-                
+                            }
 
-                    </div>
+
+
+                        </div>
                 </div>
             </div>
 
@@ -81,7 +84,9 @@
 
 
 </form>
+<script>
 
+</script>
 
 
 
