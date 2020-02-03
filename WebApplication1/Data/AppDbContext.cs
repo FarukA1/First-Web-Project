@@ -21,6 +21,7 @@ namespace WebApplication1.Data
 
         public DbSet<OrderHistory> OrderHistories { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Contact> Contact { get; set; }
 
         [NotMapped]
         public DbSet<CheckoutItem> CheckoutItems { get; set; }

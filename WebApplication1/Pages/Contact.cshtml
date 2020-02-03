@@ -1,0 +1,26 @@
+﻿@page
+@model WebApplication1.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Pages/_Layout.cshtml";
+    <link rel="stylesheet" href="~/css/Contact.css" />
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+    @using Microsoft.AspNetCore.Identity
+    @using WebApplication1.Data
+    @inject SignInManager<ApplicationUser> SignInManager
+    @inject UserManager<ApplicationUser> UserManager
+
+}
+
+<h2>Contact</h2>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <span asp-validation-for="Contact.Name"></span>
+    <div>Full Name:  <input asp-for="Contact.Name" /></div>
+    <div>Email:  <input asp-for="Contact.Email" readonly value=" @UserManager.GetUserName(User)  " /></div>
+    <div>Message:  <input asp-for="Contact.Message" /></div>
+    <input type="submit" />
+
+</form>
+
+
