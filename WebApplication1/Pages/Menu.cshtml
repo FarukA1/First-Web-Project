@@ -5,6 +5,7 @@
     Layout = "~/Pages/_Layout.cshtml";
     @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
     <link rel="stylesheet" type="text/css" href="~/css/Menu.css" />
+    
   
     @using Microsoft.AspNetCore.Identity
     @using WebApplication1.Data
@@ -24,7 +25,6 @@
     <div>
 
     </div>
-
 
 
 
@@ -59,19 +59,20 @@
                                 @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
                                 {
                                     <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
+                                   
                                 }
 
                             </div>
 
                             @if (User.IsInRole("Admin"))
                             {
-                                <div class="adminOnly">
-                                    <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
-                                    <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
-                                </div>
+                                
 
                             }
-
+                        <div class="adminOnly">
+                            <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
+                            <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
+                        </div>
 
 
                         </div>
@@ -84,45 +85,4 @@
 
 
 </form>
-<script>
 
-</script>
-
-
-
-<!--
-<form method="POST">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Picture</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var stat in Model.Menu)
-            {
-                <tr>
-                    <td>@stat.Name</td>
-                    <td>@stat.Description</td>
-                    <td>@stat.Price.ToString("C")</td>
-                    <td><img src="@Url.Content(stat.Image)" alt="@stat.Image"/></td>
-                    <td>
-
-                        <a asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit</a>
-                        <button type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
-
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <h2>Search</h2>
-
-        <div>Search: <input asp-for="Search" /></div>
-        <button type="submit" asp-page-handler="Search">Submit</button>
-    </form>
-    -->

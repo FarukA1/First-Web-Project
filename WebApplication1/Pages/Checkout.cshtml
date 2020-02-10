@@ -32,12 +32,12 @@
 
                     <td><input type="number" step="1" value=@item.Quantity></td>
                 </tr>
+                <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@item.ID">Delete</button>
             }
         </tbody>
     </table>
     <div>Total = @Model.Total.ToString("C")</div>
-
-
+    
 
 
     <!--<button type="submit" asp-page-handler="Buy">Buy</button>-->

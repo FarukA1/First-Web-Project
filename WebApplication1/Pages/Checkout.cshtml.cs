@@ -20,9 +20,10 @@ namespace WebApplication1.Pages
         public OrderHistory Order = new OrderHistory();
         public decimal Total = 0;
         public long AmountPayable = 0;
-      
 
+        [BindProperty]
         public IList<CheckoutItem> Items { get; private set; }
+        public BasketItem BasketID { get; private set; }
 
         public CheckoutModel(AppDbContext db, UserManager<ApplicationUser> UserManager)
         {
@@ -125,6 +126,29 @@ namespace WebApplication1.Pages
             await OnPostBuyAsync();
             return RedirectToPage("/PaymentReceived");
         }
+
+        public async Task<IActionResult> OnPostDeleteAsync (int itemID)
+        {
+            var user = await _UserManager.GetUserAsync(User);
+            CheckoutCustomer customer = await _db
+            .CheckoutCustomers
+            .FindAsync(user.Email);
+
+          
+            var items = _db.BasketItems.FromSql("SELECT * FROM BasketItems WHERE BasketID = {0}", customer.BasketID)
+            .ToList();
+
+            
+
+            if (items == null)
+            {
+               
+                _db.BasketItems.Remove(BasketID);
+                await _db.SaveChangesAsync();
+            }
+            return RedirectToPage();
+        }
+        
 
     }
 }
