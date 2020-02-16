@@ -66,13 +66,13 @@
 
                             @if (User.IsInRole("Admin"))
                             {
-                                
-
-                            }
                         <div class="adminOnly">
                             <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
                             <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
-                        </div>
+                        </div>  
+
+                            }
+                        
 
 
                         </div>
