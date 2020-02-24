@@ -42,7 +42,7 @@
                     }
 
                     <li>
-                        <a asp-page="/About">About Us</a>
+                        <a asp-page="/AboutUs">About Us</a>
                     </li>
                     @if (User.IsInRole("Admin") || SignInManager.IsSignedIn(User))
                     {
@@ -93,6 +93,7 @@
         @RenderBody()
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    
     <script>
 
         mybutton = document.getElementById("myBtn");
@@ -114,7 +115,7 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-
+        
 
     <footer>
 

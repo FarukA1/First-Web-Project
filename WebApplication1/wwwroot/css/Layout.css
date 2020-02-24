@@ -56,7 +56,7 @@
                 }
 
                 .nav-wrapper ul li:nth-child(7) {
-                    \ transition-delay: 0.8s;
+                     transition-delay: 0.8s;
                 }
 
                 .nav-wrapper ul li:not(:first-child) {
