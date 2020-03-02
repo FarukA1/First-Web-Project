@@ -64,33 +64,15 @@ body {
     color: #ffff00;
 }
 
-    .where hr {
-        width: 20%;
-        border-top: 2px solid #000;
-        border-bottom: none;
-    }
-
-
-.mapouter {
-    position: `absolute;
-    text-align: center;
-    height: 500px;
-    width: 1580px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.where hr {
+    width: 20%;
+    border-top: 2px solid #000;
+    border-bottom: none;
 }
 
-.gmap_canvas {
-    overflow: hidden;
-    background: none !important;
-    height: 500px;
-    width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 iframe {
-    width: 1000px;
+    width: 100%;
     height: 500px;
 }
 
