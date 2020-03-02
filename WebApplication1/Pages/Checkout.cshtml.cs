@@ -134,16 +134,15 @@ namespace WebApplication1.Pages
             .CheckoutCustomers
             .FindAsync(user.Email);
 
-          
-            var items = _db.BasketItems.FromSql("SELECT * FROM BasketItems WHERE BasketID = {0}", customer.BasketID)
-            .ToList();
 
-            
+            BasketItem item = _db.BasketItems.FromSql("SELECT * FROM BasketItems WHERE BasketID = {0} AND StockID = {1}", customer.BasketID, itemID).FirstOrDefault();
+           
 
-            if (items == null)
+         
+            if (item != null)
             {
                
-                _db.BasketItems.Remove(BasketID);
+                _db.BasketItems.Remove(item);
                 await _db.SaveChangesAsync();
             }
             return RedirectToPage();
