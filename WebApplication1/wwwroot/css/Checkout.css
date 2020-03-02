@@ -154,7 +154,7 @@ input:focus {
 
 @media(max-width:650px) {
     .shopping-cart {
-        width: 450px;
+        width: 360px;
         height: auto;
         overflow: hidden;
     }
