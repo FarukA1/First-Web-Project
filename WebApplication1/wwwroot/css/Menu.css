@@ -169,6 +169,7 @@ html {
         .pricing-button.is-featured:active {
             background-color: #ffff00;
         }
+
 .orderDe {
     color: #000;
 }
@@ -181,7 +182,9 @@ html {
 }
 
 .search {
-    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    width: 700px;
     border: 3px solid #000;
     border-right: none;
     padding: 5px;
@@ -196,6 +199,8 @@ html {
     }
 
 .searchButton {
+    max-width: 500px;
+    margin: auto;
     width: 100px;
     height: 36px;
     border: 1px solid #000;
@@ -213,6 +218,7 @@ html {
     margin-left: auto;
     margin-right: auto;
 }
+
 .adminOnly {
     width: 25%;
     margin-left: auto;
@@ -246,11 +252,3 @@ html {
 * {
     box-sizing: border-box;
 }
-
-
-
-
-
-
-
-

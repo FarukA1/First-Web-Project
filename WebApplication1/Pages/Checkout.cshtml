@@ -9,53 +9,6 @@
 @using WebApplication1.Data
 @using Microsoft.Extensions.Options
 @inject IOptions<StripeSettings> Stripe
-<!--
-<h2>Checkout</h2>
-<form method="post">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (var item in Model.Items)
-            {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Price.ToString("C")</td>
-
-
-
-                    <td><input type="number" step="1" value=@item.Quantity></td>
-
-                </tr>
-                <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@item.ID">Delete</button>
-            }
-        </tbody>
-    </table>
-    <div>Total = @Model.Total.ToString("C")</div>
-
-</form>
--->
-<!--<button type="submit" asp-page-handler="Buy">Buy</button>-->
-<!--
-<form asp-page-handler="Charge" asp-route-amount="@Model.AmountPayable" method="POST">
-    <script src="//checkout.stripe.com/v2/checkout.js"
-            class="stripe-button"
-            data-key="@Stripe.Value.PublishableKey"
-            data-locale="auto"
-            data-description="Genesis Meal Charge"
-            data-amount="@Model.AmountPayable"
-            data-currency="GBP">
-    </script>
-</form>
--->
-
-
 
 
 <div class="shopping-cart">
