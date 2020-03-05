@@ -35,6 +35,7 @@ namespace WebApplication1.Pages.Admin
                 var filename = Path.Combine(_he.WebRootPath, "Img", Path.GetFileName(Pic.FileName));
                 Pic.CopyTo(new FileStream(filename, FileMode.Create));
                 Menu.Image = Path.Combine("Img", Path.GetFileName(Pic.FileName));
+                Menu.Image.Replace("\\","/");
             }
             _db.Menus.Add(Menu);
             await _db.SaveChangesAsync();
