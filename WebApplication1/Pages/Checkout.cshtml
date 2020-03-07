@@ -2,6 +2,7 @@
 @model WebApplication1.Pages.CheckoutModel
 @{
     ViewData["Title"] = "Checkout";
+    ViewData["Count"] = @Model.itemCount;
     Layout = "~/Pages/_Layout.cshtml";
     <link rel="stylesheet" type="text/css" href="~/css/Checkout.css" />
 }
@@ -39,6 +40,8 @@
 
         }
         <div class="grand-total">Total : @Model.Total.ToString("C")</div>
+        
+       
         
     </form>
   

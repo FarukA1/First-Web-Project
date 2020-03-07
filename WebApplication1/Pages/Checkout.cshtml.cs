@@ -20,6 +20,7 @@ namespace WebApplication1.Pages
         public OrderHistory Order = new OrderHistory();
         public decimal Total = 0;
         public long AmountPayable = 0;
+        public int itemCount = 0;
 
         [BindProperty]
         public IList<CheckoutItem> Items { get; private set; }
@@ -48,12 +49,16 @@ namespace WebApplication1.Pages
                 "WHERE BasketID = {0}", customer.BasketID
                 ).ToList();
             Total = 0;
+            itemCount = 0;
             foreach (var item in Items)
             {
                 Total = Total + (item.Quantity * item.Price);
+                itemCount = Items.Count;  
             }
+            
             AmountPayable = (long)(Total * 100);
-
+            
+         
         }
 
         public async Task<IActionResult> OnPostBuyAsync()
@@ -147,6 +152,7 @@ namespace WebApplication1.Pages
             }
             return RedirectToPage();
         }
+
         
 
     }
