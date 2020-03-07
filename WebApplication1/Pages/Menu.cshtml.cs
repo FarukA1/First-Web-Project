@@ -17,6 +17,7 @@ namespace WebApplication1.Pages
         public IList<Menu> Menu { get; private set; }
         [BindProperty]
         public string Search { get; set; }
+       
 
         private readonly UserManager<ApplicationUser> _userManager;
         public MenuModel(AppDbContext db, UserManager<ApplicationUser> userManager)
@@ -80,6 +81,7 @@ namespace WebApplication1.Pages
                     throw new Exception($"Basket not found!", e);
                 }
             }
+          
             return RedirectToPage();
         }
 

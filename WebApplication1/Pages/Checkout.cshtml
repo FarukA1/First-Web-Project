@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Checkout";
     ViewData["Count"] = @Model.itemCount;
+    ViewData["Total"] = @Model.Total.ToString("C");
     Layout = "~/Pages/_Layout.cshtml";
     <link rel="stylesheet" type="text/css" href="~/css/Checkout.css" />
 }
