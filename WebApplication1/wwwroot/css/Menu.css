@@ -28,10 +28,7 @@ html {
     .background::after {
         content: '';
         background: #ffff00;
-        background: -moz-linear-gradient(top, #ffff00 0%, #ffff00 100%);
-        background: -webkit-linear-gradient(top, #ffff00 0%,#ffff00 100%);
         background: linear-gradient(to bottom, #ffff00 0%,#ffff00 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60a9ff', endColorstr='#4394f4',GradientType=0 );
         height: 350px;
         left: 0;
         position: absolute;

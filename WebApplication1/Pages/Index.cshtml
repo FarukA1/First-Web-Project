@@ -2,7 +2,7 @@
 @model WebApplication1.Pages.IndexModel
 @{
     <link rel="stylesheet" type="text/css" href="~/css/Index.css" />
-    <script type="text/javascript" src="~/JavaScript/Index.js"></script>
+    <script src="~/JavaScript/Index.js"></script>
 
     ViewData["Title"] = "Genesis";
     Layout = "~/Pages/_Layout.cshtml";
@@ -25,7 +25,7 @@
     }
 }
         <div class="slideCon">
-            <img class="slide" src="~/Img/Slide.jpg" />
+            <img class="slide" alt="" src="~/Img/Slide.jpg" />
             <!-- <div class="centered">Welcome to Genesis</div> -->
         </div>
         
@@ -38,7 +38,8 @@
 </div>
 <hr />
 <main class="site-wrapper">
-    <section class="gallery">
+    <div class="gallery">
+       
         <figure class="gallery__item">
             <img src="~/Img/Index1.jpg" alt="" class="gallery__image">
             <figcaption class="gallery__image-caption">
@@ -100,7 +101,7 @@
 
 
 
-    </section>
+    </div>
 </main>
 
 

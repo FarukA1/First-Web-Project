@@ -5,9 +5,9 @@
 }
 
 @media only screen and (min-width:600px) {
-    .Logo {
+    /*.Logo {
         position: center;
-    }
+    }*/
 }
 @media only screen and (min-width: 33.75em) {
     .gallery__item {

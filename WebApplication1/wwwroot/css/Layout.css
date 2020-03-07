@@ -134,9 +134,11 @@ body {
     padding: 20px;
     text-align: center;
     margin: 0;
+    /*
     -webkit-transition: max-height 0.4s;
     -moz-transition: max-height 0.4s;
     -o-transition: max-height 0.4s;
+        */
     transition: max-height 0.4s;
 }
 
@@ -210,10 +212,10 @@ body {
     left: 0;
 }
 
-
+/*
 #nav:checked + .nav-btn {
     transform: rotate(45dag);
-}
+}*/
 
     #nav:checked + .nav-btn i {
         background: #000;
