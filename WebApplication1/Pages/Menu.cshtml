@@ -14,75 +14,100 @@
 }
 
 
-<form method="POST">
-    <div class="wrap">
-        <div class="boxSearch">
-            <input class="search" type="text" placeholder="What meal are you looking for?" asp-for="Search" />
-            <input type="submit" value="Search" asp-page-handler="Search" class="searchButton" /> <i class="faruk fa-search"></i>
-        </div>
-    </div>
-    <div>
-
-    </div>
-
-    
-
-
-    <div class="columns">
-        
-            @foreach (var stat in Model.Menu)
-            {
-        <div class="background">
-
-            <div class="container">
-                <div class="panel pricing-table">
-
-                    <div class="pricing-plan">
-                        <img src="@Url.Content(stat.Image)" alt="" class="pricing-img">
-                        <h2 class="pricing-header">@stat.Name</h2>
-                        <ul class="pricing-features">
-                            <li class="pricing-features-item">@stat.Description</li>
-
-                        </ul>
-                        <span class="pricing-price">@stat.Price.ToString("C")</span>
-                        <!--
-                                <button type="submit" asp-page-handler="Buy"
-                                        asp-route-itemID="@stat.ID">
-                                    Buy
-                                </button>
-                -->
-                        @if (!SignInManager.IsSignedIn(User))
-                        {
-                            <a class="orderDe" asp-page="/Account/Login">Sign in here to make an order</a>
-
-                        }
-                        @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
-                        {
-                            <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
-
-                        }
-
-                    </div>
-
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <div class="adminOnly">
-                            <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
-                            <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
-                        </div>
-
-                    }
-
-
-
-                </div>
+    <form method="POST">
+        <div class="wrap">
+            <div class="boxSearch">
+                <input class="search" type="text" placeholder="What meal are you looking for?" asp-for="Search" />
+                <input type="submit" value="Search" asp-page-handler="Search" class="searchButton" /> <i class="faruk fa-search"></i>
             </div>
         </div>
+        <div>
+
+        </div>
+
+
+
+
+        <div class="columns">
+
+            @foreach (var stat in Model.Menu)
+            {
+                <div class="background">
+
+                    <div class="container">
+                        <div class="panel pricing-table">
+
+                            <div class="pricing-plan">
+                                <img src="@Url.Content(stat.Image)" alt="@stat.Name - @stat.Price.ToString("C")" class="pricing-img">
+                                <h2 class="pricing-header">@stat.Name</h2>
+                                <ul class="pricing-features">
+                                    <li class="pricing-features-item">@stat.Description</li>
+
+                                </ul>
+                                <span class="pricing-price">@stat.Price.ToString("C")</span>
+                                <!--
+                                            <button type="submit" asp-page-handler="Buy"
+                                                    asp-route-itemID="@stat.ID">
+                                                Buy
+                                            </button>
+                            -->
+                                @if (!SignInManager.IsSignedIn(User))
+                                {
+                                    <a class="orderDe" asp-page="/Account/Login">Sign in here to make an order</a>
+
+                                }
+                                @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
+                                {
+                                    <button type="submit" asp-page-handler="Buy" asp-route-itemID="@stat.ID" class="pricing-button">Order Now</button>
+
+                                }
+
+                            </div>
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <div class="adminOnly">
+                                    <a class="editButton" asp-page="Admin/Edit" asp-route-id="@stat.ID">Edit This Item</a>
+                                    <button class="deleteButton" type="submit" asp-page-handler="Delete" asp-route-itemID="@stat.ID">Delete</button>
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
 
             }
-        
-    </div>
+
+        </div>
+
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <input type="image" class="modal-content" id="modal-img" alt=" " disabled/>
+            <div id="caption"></div>
+        </div>
+
+    </form>
+<script>
+    var modal = document.getElementById("modal");
+    var imgs = document.getElementsByClassName("pricing-img");
+    var modalImg = document.getElementById("modal-img");
+    var captionText = document.getElementById("caption");
+
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].addEventListener("click", function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        });
 
 
-</form>
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+   
+
+</script>
+
 
