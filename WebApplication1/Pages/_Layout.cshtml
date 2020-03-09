@@ -60,7 +60,7 @@
                     @if (!User.IsInRole("Admin") & SignInManager.IsSignedIn(User))
                     {
                         <li>
-                            <a asp-page="/Checkout">Checkout (@ViewBag.Count) - @ViewBag.Total</a>
+                            <a asp-page="/Checkout">Checkout (@ViewBag.Count) - @ViewBag.Total </a>
                         </li>
                     }
 
